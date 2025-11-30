@@ -1,87 +1,98 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Data Heri</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Landing Page Elegan</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #f4f4f4;
-  }
-
-  header {
-    background: #0077cc;
-    color: white;
-    padding: 20px;
-    text-align: center;
-  }
-
-  nav {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    background: #fff;
-    padding: 10px 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  }
-
-  nav a {
-    margin: 5px 10px;
-    padding: 10px 18px;
-    background: #0077cc;
-    color: white;
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: 16px;
-    transition: 0.3s;
-  }
-
-  nav a:hover {
-    background: #005fa1;
-  }
-
-  .container {
-    padding: 20px;
-    text-align: center;
-  }
-
-  .section {
-    background: white;
-    margin: 15px auto;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 600px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  }
-
-  footer {
-    text-align: center;
-    padding: 15px;
-    background: #0077cc;
-    color: white;
-    margin-top: 20px;
-  }
+    body {
+        margin: 0;
+        font-family: 'Roboto', sans-serif;
+        background: #0d0d0d;
+        color: white;
+        overflow-x: hidden;
+    }
+    header {
+        text-align: center;
+        padding: 50px 20px;
+        background: linear-gradient(135deg, #111, #1a1a1a);
+        box-shadow: 0 0 20px #00eaff;
+    }
+    header h1 {
+        font-size: 2.4rem;
+        letter-spacing: 2px;
+        text-shadow: 0 0 10px #00eaff;
+    }
+    .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 40px 20px;
+    }
+    .card {
+        background: #111;
+        padding: 25px;
+        border-radius: 15px;
+        text-align: center;
+        transition: 0.3s;
+        border: 1px solid #00eaff60;
+        box-shadow: 0 0 10px #00eaff40;
+    }
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 0 25px #00eaff;
+        border: 1px solid #00eaff;
+    }
+    .card a {
+        text-decoration: none;
+        color: #00eaff;
+        font-size: 1.2rem;
+        font-weight: bold;
+        display: block;
+    }
+    footer {
+        text-align: center;
+        padding: 20px;
+        background: #0f0f0f;
+        border-top: 1px solid #00eaff60;
+        margin-top: 30px;
+        font-size: 0.9rem;
+        color: #ccc;
+    }
 </style>
 </head>
 <body>
 
 <header>
-  <h1>Halaman utama saya</h1>
-  <p>Catatan saya semua ada disini</p>
+    <h1>𝐒𝐢𝐥𝐚𝐡𝐤𝐚𝐧 𝐂𝐞𝐤 𝐀𝐤𝐭𝐢𝐯𝐢𝐭𝐚𝐬 𝐇𝐞𝐫𝐢</h1>
+    <p>𝐊𝐥𝐢𝐤 𝐭𝐚𝐮𝐭𝐚𝐧 𝐝𝐢 𝐛𝐚𝐰𝐚𝐡 𝐢𝐧𝐢</p>
 </header>
 
-<nav>
-  <a href="https://heriyandi9494-cloud.github.io/JADWALHERI/" target="_blank">Jadwal Dr Laser</a>
-  <a href="https://heriyandi9494-cloud.github.io/JADWALHERI/" target="_blank">Aktivitas Harian Heri</a>
-  <a href="https://heriyandi9494-cloud.github.io/HITMATDUTHERI/" target="_blank">KMA312Hari</a>
-  <a href="https://heriyandi9494-cloud.github.io/pengeluaran/" target="_blank">Pengeluaran</a>
-</nav>
+<div class="container">
+    <div class="card">
+        <a href="https://heriyandi9494-cloud.github.io/JADWALHERI/" target="_blank">𝐃𝐫 𝐋𝐚𝐬𝐞𝐫</a>
+        <p>𝐓𝐚𝐮𝐚𝐭𝐚𝐧 𝐢𝐧𝐢 𝐛𝐞𝐫𝐢𝐬𝐢 𝐣𝐚𝐝𝐰𝐚𝐥 𝐏𝐞𝐧𝐠𝐠𝐮𝐧𝐚𝐚𝐧 𝐃𝐨𝐤𝐭𝐞𝐫 𝐥𝐚𝐬𝐞𝐫 𝐇𝐞𝐫𝐢</p>
+    </div>
+    
+    <div class="card">
+        <a href="https://heriyandi9494-cloud.github.io/JADWALHERI/" target="_blank">𝐀𝐤𝐭𝐢𝐯𝐢𝐭𝐚𝐬 𝐇𝐚𝐫𝐢𝐚𝐧</a>
+        <p>𝐌𝐚𝐮 𝐭𝐚𝐮 𝐚𝐤𝐭𝐢𝐯𝐢𝐭𝐚𝐬 𝐇𝐞𝐫𝐢 𝐤𝐥𝐢𝐤 𝐭𝐚𝐮𝐭𝐚𝐧 𝐢𝐧𝐢.</p>
+    </div>
+
+    <div class="card">
+        <a href="https://heriyandi9494-cloud.github.io/HITMATDUTHERI/" target="_blank">𝐊𝐌𝐀𝟑𝟏𝟐𝐇𝐚𝐫𝐢</a>
+        <p>𝐇𝐚𝐥𝐚𝐦𝐚𝐧 𝐢𝐧𝐢 𝐛𝐞𝐫𝐢𝐬𝐢 𝐃𝐚𝐭𝐚 𝐋𝐚𝐩𝐨𝐫𝐚𝐧 𝐁𝐚𝐜𝐚𝐚𝐧 𝐀𝐥𝐤𝐢𝐭𝐚𝐛 𝐇𝐚𝐫𝐢𝐚𝐧 𝐇𝐞𝐫𝐢.</p>
+    </div>
+
+    <div class="card">
+        <a href="https://heriyandi9494-cloud.github.io/pengeluaran/" target="_blank">𝐏𝐞𝐧𝐠𝐞𝐥𝐮𝐚𝐫𝐚𝐧</a>
+        <p>𝐋𝐢𝐡𝐚𝐭 𝐋𝐚𝐩𝐨𝐫𝐚𝐧 𝐩𝐞𝐧𝐠𝐞𝐥𝐮𝐚𝐫𝐚𝐧 𝐇𝐚𝐫𝐢𝐚𝐧 𝐇𝐞𝐫𝐢.</p>
+    </div>
+</div>
 
 <footer>
-  <p>Silahkan dicek dan klik tautan di atas</p>
+    &copy;𝐊𝐞𝐬𝐞𝐢𝐦𝐛𝐚𝐧𝐠𝐚𝐧 𝐚𝐧𝐭𝐚𝐫𝐚 𝐤𝐞𝐫𝐣𝐚 𝐝𝐚𝐧 𝐤𝐞𝐡𝐢𝐝𝐮𝐩𝐚𝐧 𝐩𝐫𝐢𝐛𝐚𝐝𝐢 𝐬𝐞𝐦𝐚𝐤𝐢𝐧 𝐝𝐢𝐩𝐞𝐫𝐡𝐚𝐭𝐢𝐤𝐚𝐧 𝐬𝐞𝐦𝐨𝐠𝐚 𝐥𝐞𝐛𝐢𝐡 𝐛𝐚𝐢𝐤
 </footer>
 
 </body>

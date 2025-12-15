@@ -1,98 +1,277 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Landing Page Elegan</title>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard Neon Glass</title>
+
+<!-- BOOTSTRAP -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- FONT AWESOME -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
 <style>
-    body {
-        margin: 0;
-        font-family: 'Roboto', sans-serif;
-        background-image: url('https://i.postimg.cc/GpmFfLsj/Screenshot-3.png') ;
-        color: rgb(250, 6, 6);
-        overflow-x: hidden;
-    }
-    header {
-        text-align: center;
-        padding: 50px 20px;
-        background-image: url('https://i.postimg.cc/zBPHRqyP/Screenshot-2.png') ;
-        box-shadow: 0 0 20px #08ed17;
-    }
-    header h1 {
-        font-size: 2.4rem;
-        letter-spacing: 2px;
-        text-shadow: 0 0 10px #0dd63c;
-    }
-    .container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
-        padding: 40px 20px;
-    }
-    .card {
-        background-image: url('https://i.postimg.cc/zBPHRqyP/Screenshot-2.png') ;
-        padding: 25px;
-        border-radius: 15px;
-        text-align: center;
-        transition: 0.3s;
-        border: 1px solid #00eaff60;
-        box-shadow: 0 0 10px #00eaff40;
-    }
-    .card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 0 25px #00eaff;
-        border: 1px solid #00eaff;
-    }
-    .card a {
-        text-decoration: none;
-        color: #f60505;
-        font-size: 1.2rem;
-        font-weight: bold;
-        display: block;
-    }
-    footer {
-        text-align: center;
-        padding: 20px;
-        border-top: 1px solid #00eaff60;
-        margin-top: 30px;
-        font-size: 0.9rem;
-        color: #ccc;
-    }
+/* ================= ROOT ================= */
+:root {
+  --neon-blue: #00f2ff;
+  --neon-pink: #ff00d4;
+  --glass-bg: rgba(255,255,255,0.12);
+  --glass-border: rgba(255,255,255,0.25);
+}
+
+/* ================= BODY ================= */
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #020024, #090979, #000);
+  color: #eafcff;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  overflow-x: hidden;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  backdrop-filter: blur(16px);
+  background: linear-gradient(
+    135deg,
+    rgba(0,242,255,0.18),
+    rgba(255,0,212,0.12)
+  );
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.navbar .btn {
+  border-radius: 999px;
+  border: 1px solid var(--glass-border);
+  color: #eafcff;
+  transition: 0.3s;
+}
+
+.navbar .btn:hover {
+  background: var(--neon-blue);
+  color: #000;
+  box-shadow: 0 0 15px var(--neon-blue);
+}
+
+/* ================= MAIN ================= */
+#mainContent {
+  margin-top: 90px;
+  padding: 1.5rem;
+}
+
+/* ================= SECTION ================= */
+section {
+  display: none;
+  background: var(--glass-bg);
+  backdrop-filter: blur(18px);
+  border-radius: 1.2rem;
+  padding: 1.5rem;
+  border: 1px solid var(--glass-border);
+  box-shadow:
+    0 0 25px rgba(0,242,255,0.18),
+    inset 0 0 20px rgba(255,255,255,0.08);
+}
+
+section.active {
+  display: block;
+  animation: slideFade 0.45s ease;
+}
+
+@keyframes slideFade {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+section h2 {
+  color: var(--neon-blue);
+  text-shadow:
+    0 0 10px var(--neon-blue),
+    0 0 25px rgba(0,242,255,0.6);
+  margin-bottom: 1.5rem;
+}
+
+/* ================= CARD ================= */
+.card-hover {
+  background: rgba(255,255,255,0.14);
+  backdrop-filter: blur(14px);
+  border-radius: 1rem;
+  border: 1px solid var(--glass-border);
+  text-align: center;
+  padding: 1.5rem;
+  height: 100%;
+  transition: 0.35s ease;
+}
+
+.card-hover i {
+  font-size: 2.2rem;
+  color: var(--neon-blue);
+  text-shadow: 0 0 12px var(--neon-blue);
+  margin-bottom: 0.6rem;
+}
+
+.card-hover h5,
+.card-hover h6 {
+  color: #eafcff;
+}
+
+.card-hover:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow:
+    0 0 30px var(--neon-pink),
+    0 0 60px rgba(0,242,255,0.6);
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .card-hover {
+    transition: 0.25s;
+  }
+
+  .card-hover:active {
+    transform: scale(0.96);
+    box-shadow: 0 0 18px var(--neon-blue);
+  }
+}
 </style>
 </head>
+
 <body>
 
-<header>
-    <h1> 𝐀𝐤𝐭𝐢𝐯𝐢𝐭𝐚𝐬 𝐇𝐞𝐫𝐢</h1>
-</header>
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container-fluid">
+    <span class="navbar-brand fw-bold">𝐃𝐚𝐬𝐡𝐛𝐨𝐚𝐫𝐝 𝐒𝐚𝐲𝐚</span>
 
-<div class="container">
-    <div class="card">
-        <a href="https://heriyandi9494-cloud.github.io/drlaser/" target="_blank">𝐃𝐫 𝐋𝐚𝐬𝐞𝐫</a>
-        <p>𝐓𝐚𝐮𝐚𝐭𝐚𝐧 𝐢𝐧𝐢 𝐛𝐞𝐫𝐢𝐬𝐢 𝐣𝐚𝐝𝐰𝐚𝐥 𝐏𝐞𝐧𝐠𝐠𝐮𝐧𝐚𝐚𝐧 𝐃𝐨𝐤𝐭𝐞𝐫 𝐥𝐚𝐬𝐞𝐫 𝐇𝐞𝐫𝐢</p>
-    </div>
-    
-    <div class="card">
-        <a href="https://heriyandi9494-cloud.github.io/JADWALHERI/" target="_blank">𝐀𝐤𝐭𝐢𝐯𝐢𝐭𝐚𝐬 𝐇𝐚𝐫𝐢𝐚𝐧</a>
-        <p>𝐌𝐚𝐮 𝐭𝐚𝐮 𝐚𝐤𝐭𝐢𝐯𝐢𝐭𝐚𝐬 𝐇𝐞𝐫𝐢 𝐤𝐥𝐢𝐤 𝐭𝐚𝐮𝐭𝐚𝐧 𝐢𝐧𝐢.</p>
-    </div>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#topNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-    <div class="card">
-        <a href="https://heriyandi9494-cloud.github.io/HITMATDUTHERI/" target="_blank">𝐊𝐌𝐀𝟑𝟏𝟐𝐇𝐚𝐫𝐢</a>
-        <p>𝐇𝐚𝐥𝐚𝐦𝐚𝐧 𝐢𝐧𝐢 𝐛𝐞𝐫𝐢𝐬𝐢 𝐃𝐚𝐭𝐚 𝐋𝐚𝐩𝐨𝐫𝐚𝐧 𝐁𝐚𝐜𝐚𝐚𝐧 𝐀𝐥𝐤𝐢𝐭𝐚𝐛 𝐇𝐚𝐫𝐢𝐚𝐧 𝐇𝐞𝐫𝐢.</p>
+    <div class="collapse navbar-collapse" id="topNav">
+      <ul class="navbar-nav ms-auto gap-2">
+        <li class="nav-item">
+          <button class="btn" onclick="showSection('website')">𝐖𝐞𝐛𝐬𝐢𝐭𝐞 𝐒𝐚𝐲𝐚</button>
+        </li>
+        <li class="nav-item">
+          <button class="btn" onclick="showSection('aktivitas')">𝐀𝐤𝐭𝐢𝐯𝐢𝐭𝐚𝐬</button>
+        </li>
+        <li class="nav-item">
+          <button class="btn" onclick="showSection('penjualan')">𝐏𝐞𝐧𝐣𝐮𝐚𝐥𝐚𝐧</button>
+        </li>
+        <li class="nav-item">
+          <button class="btn" onclick="showSection('Mistake')">𝐌𝐢𝐬𝐭𝐚𝐤𝐞</button>
+        </li>
+      </ul>
     </div>
+  </div>
+</nav>
 
-    <div class="card">
-        <a href="https://heriyandi9494-cloud.github.io/pasimpong/" target="_blank">𝐏𝐀𝐒𝐈𝐌𝐏𝐎𝐍𝐆</a>
-        <p>𝐊𝐨𝐧𝐭𝐞𝐧𝐭 𝐛𝐨𝐱 𝐢𝐧𝐢 𝐛𝐞𝐫𝐢𝐬𝐢 𝐭𝐚𝐛𝐮𝐧𝐠𝐚𝐧 𝐏𝐚𝐬𝐢𝐦𝐩𝐨𝐧𝐠.</p>
-    </div>
+<!-- ================= MAIN ================= -->
+<main id="mainContent" class="container-fluid">
 
-    <div class="card">
-        <a href="https://heriyandi9494-cloud.github.io/pengeluaran/" target="_blank">𝐏𝐞𝐧𝐠𝐞𝐥𝐮𝐚𝐫𝐚𝐧</a>
-        <p>𝐋𝐢𝐡𝐚𝐭 𝐋𝐚𝐩𝐨𝐫𝐚𝐧 𝐩𝐞𝐧𝐠𝐞𝐥𝐮𝐚𝐫𝐚𝐧 𝐇𝐚𝐫𝐢𝐚𝐧 𝐇𝐞𝐫𝐢.</p>
+<!-- WEBSITE -->
+<section id="website">
+  <h2>𝐖𝐞𝐛𝐬𝐢𝐭𝐞 𝐒𝐚𝐲𝐚</h2>
+  <div class="row g-4">
+    <div class="col-md-6">
+      <a href="https://sites.google.com/view/mudasarohani/page_2"class="card-hover text-decoration-none">
+        <i class="fa-solid fa-globe"></i>
+        <h5>𝐖𝐞𝐛𝐬𝐢𝐭𝐞 𝐇𝐃𝐒</h5>
+      </a>
     </div>
-</div>
+    <div class="col-md-6">
+      <a href="https://omkstpetrusdanpaulusrasulsekonau-byte.github.io/landingpageomksekonau/" class="card-hover text-decoration-none">
+        <i class="fa-solid fa-folder-open"></i>
+        <h5>𝐖𝐞𝐛𝐬𝐢𝐭𝐞 𝐎𝐌𝐊 𝐒𝐞𝐤𝐨𝐧𝐚𝐮</h5>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- AKTIVITAS -->
+<section id="aktivitas">
+  <h2>𝐀𝐤𝐭𝐢𝐯𝐢𝐭𝐚𝐬 𝐒𝐚𝐲𝐚</h2>
+  <div class="row g-4">
+    <div class="col-6 col-md-3">
+      <a href="https://heriyandi9494-cloud.github.io/drlaser/" class="card-hover text-decoration-none">
+        <i class="fa-solid fa-list-check"></i>
+        <h6>𝐃𝐫 𝐋𝐚𝐬𝐞𝐫</h6>
+      </a>
+    </div>
+    <div class="col-6 col-md-3">
+      <a href="https://heriyandi9494-cloud.github.io/JADWALHERI/" class="card-hover text-decoration-none">
+        <i class="fa-solid fa-note-sticky"></i>
+        <h6>𝐀𝐤𝐭𝐢𝐯𝐢𝐭𝐚𝐬 𝐇𝐚𝐫𝐢𝐚𝐧</h6>
+      </a>
+    </div>
+    <div class="col-6 col-md-3">
+      <a href="https://heriyandi9494-cloud.github.io/HITMATDUTHERI/" class="card-hover text-decoration-none">
+        <i class="fa-solid fa-note-sticky"></i>
+        <h6>𝐉𝐚𝐝𝐰𝐚𝐥 𝐁𝐚𝐜𝐚 𝐀𝐥𝐤𝐢𝐭𝐚𝐛</h6>
+      </a>
+    </div>
+    <div class="col-6 col-md-3">
+      <a href="https://heriyandi9494-cloud.github.io/pasimpong/" class="card-hover text-decoration-none">
+        <i class="fa-solid fa-note-sticky"></i>
+        <h6>𝐄𝐖𝐚𝐥𝐥𝐞𝐭</h6>
+      </a>
+    </div>
+    <div class="col-6 col-md-3">
+      <a href="https://heriyandi9494-cloud.github.io/pengeluaran/" class="card-hover text-decoration-none">
+        <i class="fa-solid fa-note-sticky"></i>
+        <h6>𝐏𝐞𝐧𝐠𝐞𝐥𝐮𝐚𝐫𝐚𝐧</h6>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PENJUALAN -->
+<section id="penjualan">
+  <h2>𝐏𝐞𝐧𝐣𝐮𝐚𝐥𝐚𝐧</h2>
+  <div class="row g-4">
+    <div class="col-md-4">
+      <a href="https://heriyandi9494-cloud.github.io/graceresto/" class="card-hover text-decoration-none">
+        <i class="fa-solid fa-boxes-packing"></i>
+        <h5>𝐋𝐚𝐩𝐨𝐫𝐚𝐧 𝐏𝐞𝐧𝐣𝐮𝐚𝐥𝐚𝐧</h5>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Mistake -->
+<section id="Mistake">
+  <h2>𝐌𝐢𝐬𝐭𝐚𝐤𝐞</h2>
+  <div class="row g-4">
+    <div class="col-md-4">
+      <a href="https://omkstpetrusdanpaulusrasulsekonau-byte.github.io/mistake/" class="card-hover text-decoration-none">
+        <i class="fa-solid fa-boxes-packing"></i>
+        <h5>𝐌𝐢𝐬𝐭𝐚𝐤𝐞</h5>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= SCRIPT ================= -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+function showSection(id) {
+  document.querySelectorAll("section").forEach(sec => {
+    sec.classList.remove("active");
+  });
+  document.getElementById(id).classList.add("active");
+}
+
+// default
+document.addEventListener("DOMContentLoaded", () => {
+  showSection("website");
+});
+</script>
 
 </body>
 </html>

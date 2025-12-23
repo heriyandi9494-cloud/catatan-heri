@@ -94,49 +94,102 @@ section h2 {
     0 0 25px rgba(0,242,255,0.6);
   margin-bottom: 1.5rem;
 }
-
-/* ================= CARD ================= */
+/* RGB ANIMATED BORDER CARD */
 .card-hover {
-  background: rgba(255,255,255,0.14);
-  backdrop-filter: blur(14px);
-  border-radius: 1rem;
-  border: 1px solid var(--glass-border);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  height: 145px;
+  padding: 22px;
+
+  background: linear-gradient(180deg, #070b16, #020409);
+  border-radius: 14px;
+
+  color: #eaf6ff;
   text-align: center;
-  padding: 1.5rem;
-  height: 100%;
-  transition: 0.35s ease;
-}
+  text-decoration: none;
 
-.card-hover i {
-  font-size: 2.2rem;
-  color: var(--neon-blue);
-  text-shadow: 0 0 12px var(--neon-blue);
-  margin-bottom: 0.6rem;
-}
-
-.card-hover h5,
-.card-hover h6 {
-  color: #eafcff;
-}
-
-.card-hover:hover {
-  transform: translateY(-10px) scale(1.03);
   box-shadow:
-    0 0 30px var(--neon-pink),
-    0 0 60px rgba(0,242,255,0.6);
+    0 0 20px rgba(0,0,0,0.8),
+    inset 0 0 20px rgba(255,255,255,0.05);
+
+  overflow: hidden;
+  transition: transform 0.3s ease;
 }
 
-/* ================= MOBILE ================= */
-@media (max-width: 768px) {
+/* RGB BORDER */
+.card-hover::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  border-radius: 14px;
+
+  background: linear-gradient(
+    120deg,
+    red,
+    orange,
+    yellow,
+    lime,
+    cyan,
+    blue,
+    violet,
+    red
+  );
+  background-size: 300% 300%;
+  animation: rgbBorder 4s linear infinite;
+
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+
+  pointer-events: none;
+}
+
+/* ICON */
+.card-hover i {
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: #00eaff;
+  text-shadow: 0 0 10px rgba(0,234,255,0.9);
+  z-index: 1;
+}
+
+/* TEXT */
+.card-hover h6 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  z-index: 1;
+}
+
+/* HOVER EFFECT */
+.card-hover:hover {
+  transform: translateY(-6px) scale(1.04);
+}
+
+/* RGB ANIMATION */
+@keyframes rgbBorder {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 300% 50%; }
+}
+
+/* MOBILE */
+@media (max-width: 576px) {
   .card-hover {
-    transition: 0.25s;
-  }
-
-  .card-hover:active {
-    transform: scale(0.96);
-    box-shadow: 0 0 18px var(--neon-blue);
+    height: 125px;
   }
 }
+.card-hover::before {
+  padding: 3px;
+}
+
 </style>
 </head>
 
@@ -178,14 +231,14 @@ section h2 {
   <h2>𝐖𝐞𝐛𝐬𝐢𝐭𝐞 𝐒𝐚𝐲𝐚</h2>
   <div class="row g-4">
     <div class="col-md-6">
-      <a href="https://sites.google.com/view/mudasarohani/page_2"class="card-hover text-decoration-none">
+      <a href="https://sites.google.com/view/mudasarohani/page_2"class="card-hover cyber-red text-decoration-none">
         <i class="fa-solid fa-globe"></i>
         <h5>𝐖𝐞𝐛𝐬𝐢𝐭𝐞 𝐇𝐃𝐒</h5>
       </a>
     </div>
     <div class="col-md-6">
-      <a href="https://omkstpetrusdanpaulusrasulsekonau-byte.github.io/landingpageomksekonau/" class="card-hover text-decoration-none">
-        <i class="fa-solid fa-paperclip"></i>
+      <a href="https://omkstpetrusdanpaulusrasulsekonau-byte.github.io/landingpageomksekonau/" class="card-hover cyber-red text-decoration-none">
+        <i class="fa-solid fa-globe"></i>
         <h5>𝐖𝐞𝐛𝐬𝐢𝐭𝐞 𝐎𝐌𝐊 𝐒𝐞𝐤𝐨𝐧𝐚𝐮</h5>
       </a>
     </div>
@@ -195,59 +248,58 @@ section h2 {
 <!-- AKTIVITAS -->
 <section id="aktivitas">
   <h2>𝐀𝐤𝐭𝐢𝐯𝐢𝐭𝐚𝐬 𝐒𝐚𝐲𝐚</h2>
-  <div class="row g-4">
+  <div class="row g-3">
     <div class="col-6 col-md-3">
-      <a href="https://heriyandi9494-cloud.github.io/drlaser/" class="card-hover text-decoration-none">
+      <a href="https://heriyandi9494-cloud.github.io/drlaser/" class="card-hover cyber-red text-decoration-none">
         <i class="fa-solid fa-list-check"></i>
         <h6>𝐃𝐫 𝐋𝐚𝐬𝐞𝐫</h6>
       </a>
     </div>
     <div class="col-6 col-md-3">
-      <a href="https://heriyandi9494-cloud.github.io/JADWALHERI/" class="card-hover text-decoration-none">
+      <a href="https://heriyandi9494-cloud.github.io/JADWALHERI/" class="card-hover cyber-red text-decoration-none">
         <i class="fa-solid fa-people-pulling"></i>
         <h6>𝐀𝐤𝐭𝐢𝐯𝐢𝐭𝐚𝐬 𝐇𝐚𝐫𝐢𝐚𝐧</h6>
       </a>
     </div>
     <div class="col-6 col-md-3">
-      <a href="https://heriyandi9494-cloud.github.io/HITMATDUTHERI/" class="card-hover text-decoration-none">
+      <a href="https://heriyandi9494-cloud.github.io/HITMATDUTHERI/" class="card-hover cyber-red text-decoration-none">
         <i class="fa-solid fa-cross"></i>
         <h6>𝐉𝐚𝐝𝐰𝐚𝐥 𝐁𝐚𝐜𝐚 𝐀𝐥𝐤𝐢𝐭𝐚𝐛</h6>
       </a>
     </div>
     <div class="col-6 col-md-3">
-      <a href="https://heriyandi9494-cloud.github.io/doa/" class="card-hover text-decoration-none">
+      <a href="https://heriyandi9494-cloud.github.io/doa/" class="card-hover cyber-red text-decoration-none">
         <i class="fa-solid fa-cross"></i>
         <h6>Kumpulan Doa</h6>
       </a>
     </div>
     <div class="col-6 col-md-3">
-      <a href="https://heriyandi9494-cloud.github.io/pasimpong/" class="card-hover text-decoration-none">
+      <a href="https://heriyandi9494-cloud.github.io/pasimpong/" class="card-hover cyber-red text-decoration-none">
         <i class="fa-solid fa-wallet"></i>
         <h6>𝐄𝐖𝐚𝐥𝐥𝐞𝐭</h6>
       </a>
     </div>
     <div class="col-6 col-md-3">
-      <a href="https://heriyandi9494-cloud.github.io/pengeluaran/" class="card-hover text-decoration-none">
+      <a href="https://heriyandi9494-cloud.github.io/pengeluaran/" class="card-hover cyber-red text-decoration-none">
         <i class="fa-solid fa-person-chalkboard"></i>
         <h6>𝐏𝐞𝐧𝐠𝐞𝐥𝐮𝐚𝐫𝐚𝐧</h6>
       </a>
     </div>
   </div>
-    <div class="col-6 col-md-3">
-      <a href="https://heriyandi9494-cloud.github.io/pencapaian/" class="card-hover text-decoration-none">
+      <div class="col-6 col-md-3">
+        <a href="https://heriyandi9494-cloud.github.io/pencapaian/" class="card-hover cyber-red text-decoration-none">
         <i class="fa-solid fa-person-chalkboard"></i>
-        <h6>𝐑𝐆𝐏</h6>
-      </a>
+      <h6>𝐑𝐆𝐏</h6>
+    </a>
     </div>
   </div>
 </section>
-
 <!-- PENJUALAN -->
 <section id="penjualan">
   <h2>𝐏𝐞𝐧𝐣𝐮𝐚𝐥𝐚𝐧</h2>
   <div class="row g-4">
     <div class="col-md-4">
-      <a href="https://heriyandi9494-cloud.github.io/graceresto/" class="card-hover text-decoration-none">
+      <a href="https://heriyandi9494-cloud.github.io/graceresto/" class="card-hover cyber-red text-decoration-none">
         <i class="fa-solid fa-cart-shopping"></i>
         <h5>𝐋𝐚𝐩𝐨𝐫𝐚𝐧 𝐏𝐞𝐧𝐣𝐮𝐚𝐥𝐚𝐧</h5>
       </a>
@@ -260,13 +312,13 @@ section h2 {
   <h2>𝐑𝐮𝐩𝐢𝐚𝐡 𝐓𝐫𝐚𝐜𝐤𝐞𝐫</h2>
   <div class="row g-4">
     <div class="col-md-4">
-      <a href="https://omkstpetrusdanpaulusrasulsekonau-byte.github.io/mistake/" class="card-hover text-decoration-none">
+      <a href="https://omkstpetrusdanpaulusrasulsekonau-byte.github.io/mistake/" class="card-hover cyber-red text-decoration-none">
         <i class="fa-solid fa-boxes-packing"></i>
         <h5>𝐌𝐢𝐬𝐭𝐚𝐤𝐞</h5>
       </a>
     </div>
     <div class="col-md-4">
-      <a href="https://heriyandi9494-cloud.github.io/laporan-pengeluaran-keuangan/" class="card-hover text-decoration-none">
+      <a href="https://heriyandi9494-cloud.github.io/laporan-pengeluaran-keuangan/" class="card-hover cyber-red text-decoration-none">
         <i class="fa-solid fa-boxes-packing"></i>
         <h5>𝐋𝐚𝐩𝐨𝐫𝐚𝐧 𝐤𝐞𝐮𝐚𝐧𝐠𝐚𝐧</h5>
       </a>
